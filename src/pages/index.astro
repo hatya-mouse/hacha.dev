@@ -11,6 +11,7 @@ import Layout from "../layouts/Layout.astro";
         const res = await fetch("/api/count", {
             method: counted ? "GET" : "POST",
         });
+        console.log(res);
         if (!res.ok) return;
         const { count } = await res.json<{ count: number }>();
         if (!counted) sessionStorage.setItem("site_counted", "1");
