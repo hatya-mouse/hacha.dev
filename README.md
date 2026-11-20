@@ -32,9 +32,9 @@ To learn more about the folder structure of an Astro project, refer to [our guid
 
 All commands are run from the root of the project, from a terminal:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `bun install`             | Installs dependencies                            |
+| Command               | Action                                           |
+| :-------------------- | :----------------------------------------------- |
+| `bun install`         | Installs dependencies                            |
 | `bun dev`             | Starts local dev server at `localhost:4321`      |
 | `bun build`           | Build your production site to `./dist/`          |
 | `bun preview`         | Preview your build locally, before deploying     |
@@ -44,3 +44,13 @@ All commands are run from the root of the project, from a terminal:
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+
+## Counter Database Reset Query
+
+```sql
+CREATE TABLE IF NOT EXISTS page_views (
+  id TEXT PRIMARY KEY,
+  count INTEGER NOT NULL DEFAULT 0
+);
+INSERT OR IGNORE INTO page_views (id, count) VALUES ('total', 0);
+```
