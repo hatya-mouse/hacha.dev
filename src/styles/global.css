@@ -6,10 +6,6 @@
     -ms-interpolation-mode: nearest-neighbor;
 }
 
-a:hover {
-    text-decoration: underline;
-}
-
 body {
     color: var(--color-zinc-800);
 }
@@ -18,4 +14,26 @@ body {
     body {
         color: var(--color-zinc-200);
     }
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+h1 {
+    font-size: 24px;
+    border-bottom: 2px solid #333;
+    margin: 4px 0px 8px 0px;
+}
+
+h2 {
+    font-size: 20px;
+    border-bottom: 2px solid #333;
+    margin: 4px 0px 8px 0px;
+}
+
+h3 {
+    font-size: 18px;
+    border-bottom: 2px solid #333;
+    margin: 4px 0px 8px 0px;
 }

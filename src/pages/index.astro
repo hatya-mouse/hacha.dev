@@ -2,36 +2,23 @@
 // import Welcome from "../components/Welcome.astro";
 import Layout from "../layouts/Layout.astro";
 import { ClientRouter } from "astro:transitions";
+import AccessCounter from "../components/AccessCounter.astro";
 ---
 
 <ClientRouter />
 
 <Layout>
-    <header class="h-8 flex flex-row gap-2 items-center justify-start px-2 bg-teal-200 dark:bg-teal-900">
+    <header class="h-10 px-4 flex flex-row gap-2 items-center justify-start bg-teal-200 dark:bg-teal-900">
         <a href="/">hacha.dev</a>
     </header>
 
-    <main class="p-2">
-        <h1 class="text-xl">Home</h1>
-        <p>Welcome to my website!</p>
-        <p>
-            You are #<span id="access-counter">------</span> visitor!
-        </p>
-    </main>
-    <!-- <Welcome /> -->
-</Layout>
+    <main class="px-4 py-2">
+        <div class="flex justify-center mt-2">
+            <AccessCounter />
+        </div>
 
-<script>
-    document.addEventListener("astro:page-load", async () => {
-        const counter = document.getElementById("access-counter");
-        if (!counter) return;
-        const counted = sessionStorage.getItem("site_counted");
-        const res = await fetch("/api/count", {
-            method: counted ? "GET" : "POST",
-        });
-        if (!res.ok) return;
-        const { count } = await res.json<{ count: number }>();
-        if (!counted) sessionStorage.setItem("site_counted", "1");
-        counter.textContent = String(count).padStart(6, "0");
-    });
-</script>
+        <h1>Home</h1>
+        <p>Welcome to my website!</p>
+        <p>I'm a student at Kosen (工業高等専門学校) in Japan</p>
+    </main>
+</Layout>
