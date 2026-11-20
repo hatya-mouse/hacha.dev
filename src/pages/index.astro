@@ -6,6 +6,7 @@ import Layout from "../layouts/Layout.astro";
 <script>
     document.addEventListener("astro:page-load", async () => {
         const counter = document.getElementById("access-counter");
+        console.log(counter);
         if (!counter) return;
         const counted = sessionStorage.getItem("site_counted");
         const res = await fetch("/api/count", {
