@@ -14,7 +14,7 @@ export default defineConfig({
         {
             provider: fontProviders.fontsource(),
             name: "Google Sans Code",
-            cssVariable: "--font-roboto",
+            cssVariable: "--font-google-sans-code",
         },
     ],
 });
