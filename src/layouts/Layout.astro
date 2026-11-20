@@ -14,8 +14,10 @@ import Head from "../components/Head.astro";
         <title>Astro Basics</title>
         <Head />
     </head>
-    <body>
-        <slot />
+    <body class="flex justify-center bg-zinc-200 dark:bg-neutral-900">
+        <div class="max-w-2xl w-full bg-white dark:bg-neutral-800">
+            <slot />
+        </div>
     </body>
 </html>
 

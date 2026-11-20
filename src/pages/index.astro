@@ -7,7 +7,17 @@ import { ClientRouter } from "astro:transitions";
 <ClientRouter />
 
 <Layout>
-    <span id="access-counter">------</span>
+    <header class="h-8 flex flex-row gap-2 items-center justify-start px-2 bg-teal-200 dark:bg-teal-900">
+        <a href="/">hacha.dev</a>
+    </header>
+
+    <main class="p-2">
+        <h1 class="text-xl">Home</h1>
+        <p>Welcome to my website!</p>
+        <p>
+            You are #<span id="access-counter">------</span> visitor!
+        </p>
+    </main>
     <!-- <Welcome /> -->
 </Layout>
 

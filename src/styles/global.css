@@ -5,3 +5,17 @@
     image-rendering: crisp-edges;
     -ms-interpolation-mode: nearest-neighbor;
 }
+
+a:hover {
+    text-decoration: underline;
+}
+
+body {
+    color: var(--color-zinc-800);
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        color: var(--color-zinc-200);
+    }
+}
