@@ -1,15 +1,20 @@
 ---
-// import Welcome from "../components/Welcome.astro";
-import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
 import { ClientRouter } from "astro:transitions";
+import headerImage from "../assets/images/header.png";
+import Layout from "../layouts/Layout.astro";
 import AccessCounter from "../components/AccessCounter.astro";
 ---
 
 <ClientRouter />
 
 <Layout>
-    <header class="h-10 px-4 flex flex-row gap-2 items-center justify-start bg-teal-200 dark:bg-teal-900">
-        <a href="/">hacha.dev</a>
+    <header class="bg-sky-200 dark:bg-slate-800">
+        <div class="h-10 px-4 flex flex-row gap-2 items-center justify-start">
+            <a href="/">hacha.dev</a>
+        </div>
+
+        <img src={headerImage.src} alt="Header" class="pixel-art w-full" />
     </header>
 
     <main class="px-4 py-2">
