@@ -3,11 +3,6 @@ import Welcome from "../components/Welcome.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout>
-    <span id="access-counter">------</span>
-    <!-- <Welcome /> -->
-</Layout>
-
 <script>
     document.addEventListener("astro:page-load", async () => {
         const counter = document.getElementById("access-counter");
@@ -22,3 +17,8 @@ import Layout from "../layouts/Layout.astro";
         counter.textContent = String(count).padStart(6, "0");
     });
 </script>
+
+<Layout>
+    <span id="access-counter">------</span>
+    <!-- <Welcome /> -->
+</Layout>
