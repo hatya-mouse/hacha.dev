@@ -1,17 +1,12 @@
 ---
-import extLinkImage from "../assets/images/external.png";
-import extLinkImageDark from "../assets/images/external_dark.png";
+import extLinkImage from "../assets/images/icons/external.png";
+import extLinkImageDark from "../assets/images/icons/external_dark.png";
+import DarkImage from "./DarkImage.astro";
 ---
 
-<picture class="inline-block w-4 h-4 align-middle">
-    <source
-        srcset={extLinkImageDark.src}
-        class="pixel-art w-full h-full"
-        media="(prefers-color-scheme: dark)"
-    />
-    <img
-        src={extLinkImage.src}
-        alt="External Link"
-        class="pixel-art w-full h-full"
-    />
-</picture>
+<DarkImage
+    class="inline-block w-4 h-4 align-middle"
+    lightSrc={extLinkImage.src}
+    darkSrc={extLinkImageDark.src}
+    imgClass="pixel-art w-full h-full"
+/>

@@ -1,5 +1,4 @@
 ---
-import { ClientRouter } from "astro:transitions";
 import Layout from "@/layouts/Layout.astro";
 import ExtLinkIcon from "@/components/ExtLinkIcon.astro";
 import Timeline from "@/components/index/Timeline.astro";
@@ -11,6 +10,16 @@ import hinaningyoImage from "@/assets/images/avatar/hinaningyo.png";
 import helloweenImage from "@/assets/images/avatar/helloween.png";
 import christmasImage from "@/assets/images/avatar/christmas.png";
 import omisokaImage from "@/assets/images/avatar/omisoka.png";
+
+import xImage from "@/assets/images/icons/x.png";
+import xImageDark from "@/assets/images/icons/x_dark.png";
+import ghImage from "@/assets/images/icons/gh.png";
+import ghImageDark from "@/assets/images/icons/gh_dark.png";
+import instaImage from "@/assets/images/icons/insta.png";
+import instaImageDark from "@/assets/images/icons/insta_dark.png";
+import linImage from "@/assets/images/icons/lin.png";
+import linImageDark from "@/assets/images/icons/lin_dark.png";
+import DarkImage from "@/components/DarkImage.astro";
 
 let avatarSrc = normalImage.src;
 const today = new Date();
@@ -62,20 +71,72 @@ if (m == 1 && d >= 1 && d <= 3) {
         </div>
     </div>
 
-    <h2>X</h2>
-    <a
-        class="twitter-timeline"
-        href="https://x.com/hachanezu_mouse?ref_src=twsrc%5Etfw"
-        target="_blank"
-        rel="noopener noreferrer"
-    >
-        Posts by hachanezu_mouse
-    </a>
-    <script
-        async
-        src="https://platform.x.com/widgets.js"
-        charset="utf-8"
-    ></script>
+    <h2>Social Accounts</h2>
+    <div class="flex flex-col gap-4">
+        <a
+            href="https://github.com/hatya-mouse"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex flex-row gap-4 items-center justify-start"
+        >
+            <DarkImage
+                class="w-8 h-8"
+                lightSrc={ghImage.src}
+                darkSrc={ghImageDark.src}
+                alt="GitHub"
+                imgClass="pixel-art w-full"
+            />
+            hatya-mouse
+        </a>
+
+        <a
+            href="https://x.com/hachanezu_mouse"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex flex-row gap-4 items-center justify-start"
+        >
+            <DarkImage
+                class="w-8 h-8"
+                lightSrc={xImage.src}
+                darkSrc={xImageDark.src}
+                alt="X"
+                imgClass="pixel-art w-full"
+            />
+            @hachanezu_mouse
+        </a>
+
+        <a
+            href="https://www.instagram.com/hacha_mouse/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex flex-row gap-4 items-center justify-start"
+        >
+            <DarkImage
+                class="w-8 h-8"
+                lightSrc={instaImage.src}
+                darkSrc={instaImageDark.src}
+                alt="Instagram"
+                imgClass="pixel-art w-full"
+            />
+            hacha_mouse
+        </a>
+
+        <a
+            href="https://www.linkedin.com/in/shuntaro-kasatani-68bb17411/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex flex-row gap-4 items-center justify-start"
+        >
+            <DarkImage
+                class="w-8 h-8"
+                lightSrc={linImage.src}
+                darkSrc={linImageDark.src}
+                alt="LinkedIn"
+                imgClass="pixel-art w-full"
+            />
+            Shuntaro Kasatani
+        </a>
+    </div>
 
     <h2>Timeline</h2>
     <Timeline>

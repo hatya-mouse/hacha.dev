@@ -1,0 +1,12 @@
+---
+const { lightSrc, darkSrc, alt, imgClass, class: className } = Astro.props;
+---
+
+<picture class={className}>
+    <source
+        srcset={darkSrc}
+        class={imgClass}
+        media="(prefers-color-scheme: dark)"
+    />
+    <img src={lightSrc} alt={alt} class={imgClass} />
+</picture>

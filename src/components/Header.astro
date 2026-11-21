@@ -2,6 +2,7 @@
 import AccessCounter from "./AccessCounter.astro";
 import headerImage from "../assets/images/header.png";
 import headerImageDark from "../assets/images/header_dark.png";
+import DarkImage from "./DarkImage.astro";
 ---
 
 <header class="bg-sky-200 dark:bg-slate-800">
@@ -10,12 +11,10 @@ import headerImageDark from "../assets/images/header_dark.png";
         <AccessCounter />
     </div>
 
-    <picture>
-        <source
-            srcset={headerImageDark.src}
-            class="pixel-art w-full"
-            media="(prefers-color-scheme: dark)"
-        />
-        <img src={headerImage.src} alt="Header" class="pixel-art w-full" />
-    </picture>
+    <DarkImage
+        lightSrc={headerImageDark.src}
+        darkSrc={headerImage.src}
+        alt="Header"
+        imgClass="pixel-art w-full"
+    />
 </header>
