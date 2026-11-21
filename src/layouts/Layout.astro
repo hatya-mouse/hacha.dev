@@ -10,10 +10,26 @@ import Footer from "../components/Footer.astro";
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width" />
+
+        <!-- Favicon and app name -->
+        <link
+            rel="icon"
+            type="image/png"
+            href="/favicon-96x96.png"
+            sizes="96x96"
+        />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="/apple-touch-icon.png"
+        />
+        <meta name="apple-mobile-web-app-title" content="hacha.dev" />
+        <link rel="manifest" href="/site.webmanifest" />
+
         <meta name="generator" content={Astro.generator} />
-        <title>Astro Basics</title>
+        <title>hacha.dev</title>
         <Head />
     </head>
     <body class="flex min-h-screen justify-center bg-zinc-200 dark:bg-neutral-900">
