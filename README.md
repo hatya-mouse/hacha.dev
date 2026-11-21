@@ -45,7 +45,9 @@ All commands are run from the root of the project, from a terminal:
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
 
-## Counter Database Reset Query
+## Counter Database Query
+
+### Initialization
 
 ```sql
 CREATE TABLE IF NOT EXISTS page_views (
@@ -53,4 +55,10 @@ CREATE TABLE IF NOT EXISTS page_views (
   count INTEGER NOT NULL DEFAULT 0
 );
 INSERT OR IGNORE INTO page_views (id, count) VALUES ('total', 0);
+```
+
+### Reset
+
+```sql
+UPDATE page_views SET count = 0 WHERE id = 'total';
 ```
