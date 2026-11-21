@@ -25,7 +25,3 @@ pnpm-debug.log*
 
 # Exclude .wrangler/ directory
 .wrangler/
-
-# Editor files
-.zed/
-.vscode/
