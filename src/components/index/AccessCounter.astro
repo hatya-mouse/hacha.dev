@@ -9,13 +9,20 @@
     document.addEventListener("astro:page-load", async () => {
         const counter = document.getElementById("access-counter");
         if (!counter) return;
-        const counted = sessionStorage.getItem("site_counted");
+
+        if (new URLSearchParams(location.search).has("ignore")) {
+            localStorage.setItem("ignore_count", "1");
+        }
+
+        const skip =
+            sessionStorage.getItem("site_counted") ||
+            localStorage.getItem("ignore_count");
         const res = await fetch("/api/count", {
-            method: counted ? "GET" : "POST",
+            method: skip ? "GET" : "POST",
         });
         if (!res.ok) return;
         const { count } = await res.json<{ count: number }>();
-        if (!counted) sessionStorage.setItem("site_counted", "1");
+        if (!skip) sessionStorage.setItem("site_counted", "1");
         counter.textContent = String(count).padStart(6, "0");
     });
 </script>
