@@ -2,7 +2,6 @@
 import { ClientRouter } from "astro:transitions";
 import Layout from "../layouts/Layout.astro";
 import AccessCounter from "../components/AccessCounter.astro";
-import Header from "../components/Header.astro";
 import ExtLinkIcon from "../components/ExtLinkIcon.astro";
 
 import normalImage from "../assets/images/avatar/normal.png";
@@ -33,40 +32,36 @@ if (m == 1 && d >= 1 && d <= 3) {
 <ClientRouter />
 
 <Layout>
-    <Header />
+    <div class="flex justify-center mt-2">
+        <AccessCounter />
+    </div>
 
-    <main class="px-4 py-2">
-        <div class="flex justify-center mt-2">
-            <AccessCounter />
+    <h1>Home</h1>
+    <p>Thank you for visiting my website!</p>
+    <p>Feel free to look around~</p>
+
+    <h2>Profile</h2>
+    <div class="flex gap-4 sm:flex-row flex-col">
+        <img
+            src={avatarSrc}
+            alt="Profile Picture"
+            class="pixel-art max-w-32 w-full"
+        />
+        <div>
+            <p>Name: Shuntaro Kasatani</p>
+            <p>Birthday: March 19</p>
+            <p>Location: Japan</p>
+            <p>
+                Education:&nbsp;
+                <a
+                    href="https://nagano-nct.ac.jp"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    National Institute of Techonology (KOSEN), Nagano College{" "}
+                    <ExtLinkIcon />
+                </a>
+            </p>
         </div>
-
-        <h1>Home</h1>
-        <p>Thank you for visiting my website!</p>
-        <p>Feel free to look around~</p>
-
-        <h2>Profile</h2>
-        <div class="flex gap-4 sm:flex-row flex-col">
-            <img
-                src={avatarSrc}
-                alt="Profile Picture"
-                class="pixel-art max-w-32 w-full"
-            />
-            <div>
-                <p>Name: Shuntaro Kasatani</p>
-                <p>Birthday: March 19</p>
-                <p>Location: Japan</p>
-                <p>
-                    Education:&nbsp;
-                    <a
-                        href="https://nagano-nct.ac.jp"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        National Institute of Techonology (KOSEN), Nagano
-                        College <ExtLinkIcon />
-                    </a>
-                </p>
-            </div>
-        </div>
-    </main>
+    </div>
 </Layout>
