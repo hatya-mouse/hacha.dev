@@ -1,21 +1,9 @@
 <div class="flex flex-row gap-2 items-baseline">
-    <div id="access-counter" class="px-1 tracking-widest">
+    <div id="access-counter" class="px-1 tracking-widest border-outset">
         ------
     </div>
     <div>visits</div>
 </div>
-
-<style>
-    #access-counter {
-        border-width: 4px;
-        border-style: outset;
-        border-color: color-mix(
-            in srgb,
-            var(--color-teal-400) 50%,
-            transparent
-        );
-    }
-</style>
 
 <script>
     document.addEventListener("astro:page-load", async () => {

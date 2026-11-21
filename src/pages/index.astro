@@ -3,6 +3,30 @@ import { ClientRouter } from "astro:transitions";
 import Layout from "../layouts/Layout.astro";
 import AccessCounter from "../components/AccessCounter.astro";
 import Header from "../components/Header.astro";
+
+import normalImage from "../assets/images/avatar/normal.png";
+import shogatsuImage from "../assets/images/avatar/shogatsu.png";
+import hinaningyoImage from "../assets/images/avatar/hinaningyo.png";
+import helloweenImage from "../assets/images/avatar/helloween.png";
+import christmasImage from "../assets/images/avatar/christmas.png";
+import omisokaImage from "../assets/images/avatar/omisoka.png";
+
+let avatarSrc = normalImage.src;
+const today = new Date();
+const m = today.getMonth() + 1;
+const d = today.getDate();
+
+if (m == 1 && d >= 1 && d <= 3) {
+    avatarSrc = shogatsuImage.src;
+} else if (m == 3 && d == 3) {
+    avatarSrc = hinaningyoImage.src;
+} else if (m == 10 && d >= 29) {
+    avatarSrc = helloweenImage.src;
+} else if (m == 12 && d >= 23 && d <= 25) {
+    avatarSrc = christmasImage.src;
+} else if (m == 12 && d == 31) {
+    avatarSrc = omisokaImage.src;
+}
 ---
 
 <ClientRouter />
@@ -18,5 +42,18 @@ import Header from "../components/Header.astro";
         <h1>Home</h1>
         <p>Welcome to my website!</p>
         <p>I'm a student at Kosen (工業高等専門学校) in Japan</p>
+
+        <h2>Profile</h2>
+        <div class="flex gap-4 sm:flex-row flex-col">
+            <img
+                src={avatarSrc}
+                alt="Profile Picture"
+                class="pixel-art max-w-32 w-full"
+            />
+            <div>
+                <p>Name: Shuntaro Kasatani</p>
+                <p>Birthday: March 19, 2010</p>
+            </div>
+        </div>
     </main>
 </Layout>
