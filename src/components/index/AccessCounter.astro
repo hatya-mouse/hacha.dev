@@ -1,15 +1,9 @@
-<div class="flex flex-row gap-2 items-baseline">
-    <div id="access-counter" class="px-1 tracking-widest border-outset">
-        ------
-    </div>
-    <div>visits</div>
-</div>
+---
+document.addEventListener("astro:page-load", () => {
+    const counter = document.getElementById("access-counter");
+    if (!counter) return;
 
-<script>
-    document.addEventListener("astro:page-load", async () => {
-        const counter = document.getElementById("access-counter");
-        if (!counter) return;
-
+    setTimeout(async () => {
         if (new URLSearchParams(location.search).has("ignore")) {
             localStorage.setItem("ignore_count", "1");
         }
@@ -24,5 +18,13 @@
         const { count } = await res.json<{ count: number }>();
         if (!skip) sessionStorage.setItem("site_counted", "1");
         counter.textContent = String(count).padStart(6, "0");
-    });
-</script>
+    }, 0);
+});
+---
+
+<div class="flex flex-row gap-2 items-baseline">
+    <div id="access-counter" class="px-1 tracking-widest border-outset">
+        ------
+    </div>
+    <div>visits</div>
+</div>
