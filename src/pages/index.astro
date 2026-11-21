@@ -1,8 +1,9 @@
 ---
 import { ClientRouter } from "astro:transitions";
 import Layout from "@/layouts/Layout.astro";
-import AccessCounter from "@/components/index/AccessCounter.astro";
 import ExtLinkIcon from "@/components/ExtLinkIcon.astro";
+import Timeline from "@/components/index/Timeline.astro";
+import TimelineItem from "@/components/index/TimelineItem.astro";
 
 import normalImage from "@/assets/images/avatar/normal.png";
 import shogatsuImage from "@/assets/images/avatar/shogatsu.png";
@@ -10,8 +11,6 @@ import hinaningyoImage from "@/assets/images/avatar/hinaningyo.png";
 import helloweenImage from "@/assets/images/avatar/helloween.png";
 import christmasImage from "@/assets/images/avatar/christmas.png";
 import omisokaImage from "@/assets/images/avatar/omisoka.png";
-import Timeline from "@/components/index/Timeline.astro";
-import TimelineItem from "@/components/index/TimelineItem.astro";
 
 let avatarSrc = normalImage.src;
 const today = new Date();
@@ -34,10 +33,6 @@ if (m == 1 && d >= 1 && d <= 3) {
 <ClientRouter />
 
 <Layout>
-    <div class="flex justify-center mt-2">
-        <AccessCounter />
-    </div>
-
     <h1>Home</h1>
     <p>Thank you for visiting my website!</p>
     <p>Feel free to look around~</p>
