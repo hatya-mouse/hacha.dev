@@ -3,6 +3,7 @@ import { ClientRouter } from "astro:transitions";
 import Layout from "../layouts/Layout.astro";
 import AccessCounter from "../components/AccessCounter.astro";
 import Header from "../components/Header.astro";
+import ExtLinkIcon from "../components/ExtLinkIcon.astro";
 
 import normalImage from "../assets/images/avatar/normal.png";
 import shogatsuImage from "../assets/images/avatar/shogatsu.png";
@@ -40,8 +41,8 @@ if (m == 1 && d >= 1 && d <= 3) {
         </div>
 
         <h1>Home</h1>
-        <p>Welcome to my website!</p>
-        <p>I'm a student at Kosen (工業高等専門学校) in Japan</p>
+        <p>Thank you for visiting my website!</p>
+        <p>Feel free to look around~</p>
 
         <h2>Profile</h2>
         <div class="flex gap-4 sm:flex-row flex-col">
@@ -52,7 +53,19 @@ if (m == 1 && d >= 1 && d <= 3) {
             />
             <div>
                 <p>Name: Shuntaro Kasatani</p>
-                <p>Birthday: March 19, 2010</p>
+                <p>Birthday: March 19</p>
+                <p>Location: Japan</p>
+                <p>
+                    Education:&nbsp;
+                    <a
+                        href="https://nagano-nct.ac.jp"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        National Institute of Techonology (KOSEN), Nagano
+                        College <ExtLinkIcon />
+                    </a>
+                </p>
             </div>
         </div>
     </main>
