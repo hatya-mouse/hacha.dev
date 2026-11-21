@@ -22,3 +22,10 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# Exclude .wrangler/ directory
+.wrangler/
+
+# Editor files
+.zed/
+.vscode/
