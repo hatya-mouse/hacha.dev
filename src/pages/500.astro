@@ -1,0 +1,22 @@
+---
+import Layout from "@/layouts/Layout.astro";
+
+const { error } = Astro.props;
+---
+
+<Layout>
+    <h1 class="text-red-700 dark:text-red-500">500</h1>
+    <p>
+        An&nbsp;
+        <span class="text-teal-700 dark:text-teal-500">
+            internal server error
+        </span>
+        &nbsp;has occured. Seemingly, there's nothing you can do expect contact
+        me.
+    </p>
+
+    <h3>Error message below</h3>
+    <div class="text-red-700 dark:text-red-500">
+        {error instanceof Error ? error.message : "Unknown error"}
+    </div>
+</Layout>
