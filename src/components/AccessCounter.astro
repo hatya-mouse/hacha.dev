@@ -10,6 +10,8 @@
 
 <script>
     document.addEventListener("astro:page-load", () => {
+        console.log("page-load:", location.pathname);
+
         const counter = document.getElementById("access-counter");
         if (!counter) return;
 
