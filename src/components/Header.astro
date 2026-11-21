@@ -1,0 +1,19 @@
+---
+import headerImage from "../assets/images/header.png";
+import headerImageDark from "../assets/images/header_dark.png";
+---
+
+<header class="bg-sky-200 dark:bg-slate-800">
+    <div class="h-10 px-4 flex flex-row gap-2 items-center justify-start">
+        <a href="/">hacha.dev</a>
+    </div>
+
+    <picture>
+        <source
+            srcset={headerImageDark.src}
+            class="pixel-art w-full"
+            media="(prefers-color-scheme: dark)"
+        />
+        <img src={headerImage.src} alt="Header" class="pixel-art w-full" />
+    </picture>
+</header>
