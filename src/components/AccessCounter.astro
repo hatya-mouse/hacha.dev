@@ -1,3 +1,7 @@
+---
+import { ClientRouter } from "astro:transitions";
+---
+
 <div class="flex flex-row gap-2 items-baseline">
     <div
         id="access-counter"
@@ -10,8 +14,6 @@
 
 <script>
     document.addEventListener("astro:page-load", () => {
-        console.log("page-load:", location.pathname);
-
         const counter = document.getElementById("access-counter");
         if (!counter) return;
 
