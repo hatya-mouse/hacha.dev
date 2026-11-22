@@ -18,4 +18,5 @@
             "database_id": "020f186e-29b8-4b8c-95ce-3dba92e0e48d",
         },
     ],
+    "workers_dev": false,
 }
