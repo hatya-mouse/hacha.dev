@@ -1,0 +1,156 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import ExtLinkIcon from "@/components/ExtLinkIcon.astro";
+import Timeline from "@/components/index/Timeline.astro";
+import TimelineItem from "@/components/index/TimelineItem.astro";
+
+import normalImage from "@/assets/images/avatar/normal.png";
+import shogatsuImage from "@/assets/images/avatar/shogatsu.png";
+import hinaningyoImage from "@/assets/images/avatar/hinaningyo.png";
+import helloweenImage from "@/assets/images/avatar/helloween.png";
+import christmasImage from "@/assets/images/avatar/christmas.png";
+import omisokaImage from "@/assets/images/avatar/omisoka.png";
+
+import xImage from "@/assets/images/icons/x.png";
+import xImageDark from "@/assets/images/icons/x_dark.png";
+import ghImage from "@/assets/images/icons/gh.png";
+import ghImageDark from "@/assets/images/icons/gh_dark.png";
+import instaImage from "@/assets/images/icons/insta.png";
+import instaImageDark from "@/assets/images/icons/insta_dark.png";
+import linImage from "@/assets/images/icons/lin.png";
+import linImageDark from "@/assets/images/icons/lin_dark.png";
+import DarkImage from "@/components/DarkImage.astro";
+
+let avatarSrc = normalImage.src;
+const today = new Date();
+const m = today.getMonth() + 1;
+const d = today.getDate();
+
+if (m == 1 && d >= 1 && d <= 3) {
+    avatarSrc = shogatsuImage.src;
+} else if (m == 3 && d == 3) {
+    avatarSrc = hinaningyoImage.src;
+} else if (m == 10 && d >= 29) {
+    avatarSrc = helloweenImage.src;
+} else if (m == 12 && d >= 23 && d <= 25) {
+    avatarSrc = christmasImage.src;
+} else if (m == 12 && d == 31) {
+    avatarSrc = omisokaImage.src;
+}
+---
+
+<Layout>
+    <h1>歓迎</h1>
+    <p>見に来てくれてありがとうございます！</p>
+
+    <h2>自己紹介</h2>
+    <div class="flex sm:gap-4 gap-2 sm:flex-row flex-col mb-2">
+        <img
+            src={avatarSrc}
+            alt="Profile Picture"
+            class="pixel-art max-w-32 w-full max-h-32 aspect-square"
+        />
+        <div>
+            <p class="text-lg">Hacha Mouse</p>
+            <p>名前: 笠谷春太朗</p>
+            <p>誕生日: 3月19日</p>
+            <p>場所: 日本</p>
+            <p>
+                所属:&nbsp;
+                <a
+                    href="https://nagano-nct.ac.jp"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    独立行政法人国立高等専門学校機構 長野工業高等専門学校&nbsp;
+                    <ExtLinkIcon />
+                </a>
+            </p>
+        </div>
+    </div>
+    <div class="px-2 py-1 bg-neutral-100 dark:bg-neutral-700">
+        <p>Hacha Mouseです。長野高専で情報系の勉強をしています。</p>
+        <p>
+            生まれは東京ですが故郷は勝手に神戸だと思っています。神戸はいいところなので暇があれば是非行ってみてください。
+        </p>
+        <p>
+            最初に使ったプログラミング言語はSwiftです。最近はRustもよく書きます。他にはC,
+            Python, TypeScript, GDScript等も一応。
+        </p>
+    </div>
+
+    <h2>アカウント</h2>
+    <div class="flex flex-col gap-4">
+        <a
+            href="https://github.com/hatya-mouse"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex flex-row gap-4 items-center justify-start"
+        >
+            <DarkImage
+                class="w-8 h-8"
+                lightSrc={ghImage.src}
+                darkSrc={ghImageDark.src}
+                alt="GitHub"
+                imgClass="pixel-art w-full"
+            />
+            hatya-mouse
+        </a>
+
+        <a
+            href="https://x.com/hachanezu_mouse"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex flex-row gap-4 items-center justify-start"
+        >
+            <DarkImage
+                class="w-8 h-8"
+                lightSrc={xImage.src}
+                darkSrc={xImageDark.src}
+                alt="X"
+                imgClass="pixel-art w-full"
+            />
+            @hachanezu_mouse
+        </a>
+
+        <a
+            href="https://www.instagram.com/hacha_mouse/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex flex-row gap-4 items-center justify-start"
+        >
+            <DarkImage
+                class="w-8 h-8"
+                lightSrc={instaImage.src}
+                darkSrc={instaImageDark.src}
+                alt="Instagram"
+                imgClass="pixel-art w-full"
+            />
+            hacha_mouse
+        </a>
+
+        <a
+            href="https://www.linkedin.com/in/shuntaro-kasatani-68bb17411/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex flex-row gap-4 items-center justify-start"
+        >
+            <DarkImage
+                class="w-8 h-8"
+                lightSrc={linImage.src}
+                darkSrc={linImageDark.src}
+                alt="LinkedIn"
+                imgClass="pixel-art w-full"
+            />
+            Shuntaro Kasatani
+        </a>
+    </div>
+
+    <h2>経歴</h2>
+    <Timeline>
+        <TimelineItem time="2010" title="東京で誕生" />
+        <TimelineItem time="2013" title="神戸に引っ越し" />
+        <TimelineItem time="2022" title="長野県に引っ越し" />
+        <TimelineItem time="2025 - 現在" title="長野高専" />
+    </Timeline>
+</Layout>

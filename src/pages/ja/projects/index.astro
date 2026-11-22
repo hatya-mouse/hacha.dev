@@ -1,0 +1,74 @@
+---
+import Layout from "@/layouts/Layout.astro";
+
+interface Project {
+    title: string;
+    year: string;
+    description: string;
+    page?: string | null;
+}
+
+const pageTitle = "Projects";
+const projects: Project[] = [
+    {
+        title: "hacha.dev",
+        year: "2026",
+        description: "Astroで個人サイト作りなおした",
+    },
+    {
+        title: "Kadent",
+        year: "2025-2026",
+        description: "自作言語で音声生成できるDAW",
+    },
+    {
+        title: "Pond Extended",
+        year: "2025",
+        description: "blockly.gamesのPondの進化版",
+    },
+    {
+        title: "Cityscape Island",
+        year: "2024",
+        description: "Scratchの2D都市開発シミュレーション（俯瞰視点）",
+    },
+    {
+        title: "music_player",
+        year: "2024",
+        description: "Arduino NanoとDFPlayer Miniで音楽プレイヤー自作",
+    },
+    {
+        title: "Cityscape",
+        year: "2023",
+        description: "Scratchの2D都市開発シミュレーション",
+    },
+    {
+        title: "TinyBrowser",
+        year: "2021",
+        description: "下と同じ目的のメニューバーブラウザ",
+    },
+    {
+        title: "TinyPlayer",
+        year: "2021",
+        description:
+            "スクリーンタイムの回避用に作ったメニューバー上で使える動画プレイヤー",
+    },
+];
+---
+
+<Layout title={pageTitle}>
+    <h1>作品</h1>
+    <p class="mb-4">作品と言える程度のものはないです</p>
+
+    <div class="flex flex-col gap-4">
+        {projects.map((project) => (
+            <a href={project.page}>
+                <div class="text-sm text-zinc-500 dark:text-zinc-400">
+                    {project.year}
+                </div>
+                <div class="font-bold">{project.title}</div>
+                <p class="text-zinc-700 dark:text-zinc-300">
+                    {project.description}
+                </p>
+            </a>
+        ))}
+    </div>
+</Layout>
