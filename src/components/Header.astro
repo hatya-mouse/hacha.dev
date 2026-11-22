@@ -9,7 +9,11 @@ const { lang } = Astro.props;
 
 <header class="bg-sky-200 dark:bg-slate-800">
     <div class="px-4 pt-2 flex gap-2 items-center justify-between">
-        {lang == "en" ? <a href="/">hacha.dev</a> : <a href="/ja">hacha.dev</a>}
+        {lang === "en" ? (
+            <a href="/">hacha.dev</a>
+        ) : (
+            <a href="/ja">hacha.dev</a>
+        )}
         <AccessCounter />
     </div>
 
@@ -21,7 +25,7 @@ const { lang } = Astro.props;
     />
 
     <div class="px-4 py-2 flex flex-wrap gap-x-4 gap-y-2 justify-between bg-neutral-100 dark:bg-neutral-700">
-        {lang == "en" ? (
+        {lang === "en" ? (
             <>
                 <div class="flex flex-wrap gap-x-4 gap-y-2 justify-between">
                     <a href="/">Home</a>
