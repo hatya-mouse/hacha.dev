@@ -10,10 +10,7 @@ const { lang } = Astro.props;
 <header class="bg-sky-200 dark:bg-slate-800">
     <div class="px-4 pt-2 flex gap-2 items-center justify-between">
         <a href="/">hacha.dev</a>
-        <div class="flex gap-2 items-center">
-            {lang == "en" ? <a href="/ja">JA</a> : <a href="/">EN</a>}
-            <AccessCounter />
-        </div>
+        <AccessCounter />
     </div>
 
     <DarkImage
@@ -23,16 +20,22 @@ const { lang } = Astro.props;
         imgClass="pixel-art w-full"
     />
 
-    <div class="px-4 py-2 flex flex-wrap gap-x-4 gap-y-2 justify-start bg-neutral-100">
+    <div class="px-4 py-2 flex flex-wrap gap-x-4 gap-y-2 justify-between bg-neutral-100 dark:bg-neutral-700">
         {lang == "en" ? (
             <>
-                <a href="/">Home</a>
-                <a href="/projects">Projects</a>
+                <div class="flex flex-wrap gap-x-4 gap-y-2 justify-between">
+                    <a href="/">Home</a>
+                    <a href="/projects">Projects</a>
+                </div>
+                <a href="/ja">JA</a>
             </>
         ) : (
             <>
-                <a href="/">トップ</a>
-                <a href="/projects">作品</a>
+                <div class="flex flex-wrap gap-x-4 gap-y-2 justify-between">
+                    <a href="/ja">トップ</a>
+                    <a href="/ja/projects">作品</a>
+                </div>
+                <a href="/">EN</a>
             </>
         )}
 
