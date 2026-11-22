@@ -22,7 +22,7 @@ body {
     }
 }
 
-a:hover {
+a[href]:not([href=""]):hover {
     text-decoration: underline;
 }
 

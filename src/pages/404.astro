@@ -1,18 +1,17 @@
 ---
 import Layout from "@/layouts/Layout.astro";
+
+const pageTitle = "404";
+const path = Astro.url.pathname;
 ---
 
-<Layout>
+<Layout title={pageTitle}>
     <h1 class="text-yellow-700 dark:text-amber-500">404</h1>
-    What,
-    <span id="not-found-path" class="text-teal-700 dark:text-teal-500" />? I
-    don't know such a page.
+    <p class="flex align-baseline">
+        What,&nbsp;
+        <span id="not-found-path" class="text-teal-700 dark:text-teal-500">
+            {path}
+        </span>
+        ? I don't know such a page.
+    </p>
 </Layout>
-
-<script>
-    const element = document.getElementById("not-found-path");
-    if (element) {
-        const path = window.location.pathname;
-        element.textContent = path;
-    }
-</script>
