@@ -9,7 +9,7 @@ const { lang } = Astro.props;
 
 <header class="bg-sky-200 dark:bg-slate-800">
     <div class="px-4 pt-2 flex gap-2 items-center justify-between">
-        <a href="/">hacha.dev</a>
+        {lang == "en" ? <a href="/">hacha.dev</a> : <a href="/ja">hacha.dev</a>}
         <AccessCounter />
     </div>
 
