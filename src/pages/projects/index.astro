@@ -15,6 +15,42 @@ const projects: Project[] = [
         year: "2026",
         description: "I redesigned my personal website using Astro!",
     },
+    {
+        title: "Kadent",
+        year: "2025-2026",
+        description: "DAW with custom programming language to generate sound",
+    },
+    {
+        title: "Pond Extended",
+        year: "2025",
+        description: "An improved version of blockly.games Pond",
+    },
+    {
+        title: "Cityscape Island",
+        year: "2024",
+        description: "Improved 2D city simulation game on Scratch",
+    },
+    {
+        title: "music_player",
+        year: "2024",
+        description: "Music player made with Arduino Nano and DFPlayer Mini",
+    },
+    {
+        title: "Cityscape",
+        year: "2023",
+        description: "2D city simulation game on Scratch",
+    },
+    {
+        title: "TinyBrowser",
+        year: "2021",
+        description: "Same as below but this time it's browser",
+    },
+    {
+        title: "TinyPlayer",
+        year: "2021",
+        description:
+            "A menubar video player for macOS for bypassing screen time 😂",
+    },
 ];
 ---
 
@@ -22,15 +58,17 @@ const projects: Project[] = [
     <h1>Projects</h1>
     <p class="mb-4">Here are some projects I've worked on!</p>
 
-    {projects.map((project) => (
-        <a href={project.page} class="pb-4">
-            <div class="text-sm text-zinc-500 dark:text-zinc-400">
-                {project.year}
-            </div>
-            <div class="font-bold">{project.title}</div>
-            <p class="text-zinc-700 dark:text-zinc-300">
-                {project.description}
-            </p>
-        </a>
-    ))}
+    <div class="flex flex-col gap-4">
+        {projects.map((project) => (
+            <a href={project.page}>
+                <div class="text-sm text-zinc-500 dark:text-zinc-400">
+                    {project.year}
+                </div>
+                <div class="font-bold">{project.title}</div>
+                <p class="text-zinc-700 dark:text-zinc-300">
+                    {project.description}
+                </p>
+            </a>
+        ))}
+    </div>
 </Layout>
