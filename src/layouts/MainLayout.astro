@@ -1,7 +1,6 @@
 ---
-import { ClientRouter } from "astro:transitions";
 import { useLanguage } from "@/i18n/utils";
-import Head from "@/components/Head.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
 import "@/styles/global.css";
@@ -10,13 +9,7 @@ const { title, lang: preferredLang } = Astro.props;
 const lang = useLanguage(preferredLang);
 ---
 
-<!doctype html>
-<html lang="en">
-    <head>
-        <title>{title ?? "hacha.dev"}</title>
-        <Head />
-        <ClientRouter />
-    </head>
+<BaseLayout title={title}>
     <body
         class="flex min-h-dvh justify-center bg-zinc-200 dark:bg-neutral-900"
         transition:animate="none"
@@ -31,11 +24,4 @@ const lang = useLanguage(preferredLang);
             <Footer />
         </div>
     </body>
-</html>
-
-<style>
-    html,
-    body {
-        font-family: var(--font-google-sans-code);
-    }
-</style>
+</BaseLayout>

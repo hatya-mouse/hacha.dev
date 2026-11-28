@@ -1,5 +1,5 @@
 ---
-import Layout from "@/layouts/Layout.astro";
+import MainLayout from "@/layouts/MainLayout.astro";
 import ExtLinkIcon from "@/components/ExtLinkIcon.astro";
 import Timeline from "@/components/index/Timeline.astro";
 import TimelineItem from "@/components/index/TimelineItem.astro";
@@ -39,7 +39,7 @@ if (m == 1 && d >= 1 && d <= 3) {
 }
 ---
 
-<Layout lang="ja">
+<MainLayout lang="ja">
     <h1>歓迎</h1>
     <p>見に来てくれてありがとうございます</p>
 
@@ -52,7 +52,6 @@ if (m == 1 && d >= 1 && d <= 3) {
         />
         <div>
             <p class="text-lg">Hacha Mouse</p>
-            <p>名前: 笠谷春太朗</p>
             <p>誕生日: 3月19日</p>
             <p>場所: 日本</p>
             <p>
@@ -154,4 +153,4 @@ if (m == 1 && d >= 1 && d <= 3) {
         <TimelineItem time="2022" title="長野県に引っ越し" />
         <TimelineItem time="2025 - 現在" title="長野高専" />
     </Timeline>
-</Layout>
+</MainLayout>

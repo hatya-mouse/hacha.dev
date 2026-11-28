@@ -1,0 +1,21 @@
+---
+import headerImage from "@/assets/images/conference/header.png";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+---
+
+<BaseLayout lang="ja">
+    <header class="bg-sky-200 dark:bg-slate-800">
+        <div class="px-4 pt-2 flex gap-2 items-center justify-between">
+            <strong class="text-lg">架空国際会議</strong>
+            <a href="/ja">hacha.devのトップへ</a>
+        </div>
+
+        <img
+            src={headerImage.src}
+            class="pixel-art w-full"
+            width="640"
+            height="128"
+            alt="Header"
+        />
+    </header>
+</BaseLayout>

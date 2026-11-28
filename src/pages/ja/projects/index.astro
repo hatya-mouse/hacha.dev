@@ -1,5 +1,5 @@
 ---
-import Layout from "@/layouts/Layout.astro";
+import MainLayout from "@/layouts/MainLayout.astro";
 
 interface Project {
     title: string;
@@ -55,7 +55,7 @@ const projects: Project[] = [
 ];
 ---
 
-<Layout title={pageTitle} lang="ja">
+<MainLayout title={pageTitle} lang="ja">
     <h1>作品</h1>
     <p class="mb-4">作品と言える程度のものはないです</p>
 
@@ -72,4 +72,4 @@ const projects: Project[] = [
             </a>
         ))}
     </div>
-</Layout>
+</MainLayout>

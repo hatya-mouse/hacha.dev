@@ -1,11 +1,11 @@
 ---
-import Layout from "@/layouts/Layout.astro";
+import MainLayout from "@/layouts/MainLayout.astro";
 
 const pageTitle = "500 | hacha.dev";
 const { error } = Astro.props;
 ---
 
-<Layout title={pageTitle}>
+<MainLayout title={pageTitle}>
     <h1 class="text-red-700 dark:text-red-500">500</h1>
     <p>
         An&nbsp;
@@ -20,4 +20,4 @@ const { error } = Astro.props;
     <div class="text-red-700 dark:text-red-500">
         {error instanceof Error ? error.message : "Unknown error"}
     </div>
-</Layout>
+</MainLayout>

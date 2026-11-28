@@ -1,5 +1,5 @@
 ---
-import Layout from "@/layouts/Layout.astro";
+import MainLayout from "@/layouts/MainLayout.astro";
 
 interface Project {
     title: string;
@@ -54,7 +54,7 @@ const projects: Project[] = [
 ];
 ---
 
-<Layout title={pageTitle}>
+<MainLayout title={pageTitle}>
     <h1>Projects</h1>
     <p class="mb-4">Here are some projects I've worked on!</p>
 
@@ -71,4 +71,4 @@ const projects: Project[] = [
             </a>
         ))}
     </div>
-</Layout>
+</MainLayout>

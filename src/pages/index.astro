@@ -1,5 +1,5 @@
 ---
-import Layout from "@/layouts/Layout.astro";
+import MainLayout from "@/layouts/MainLayout.astro";
 import ExtLinkIcon from "@/components/ExtLinkIcon.astro";
 import Timeline from "@/components/index/Timeline.astro";
 import TimelineItem from "@/components/index/TimelineItem.astro";
@@ -39,7 +39,7 @@ if (m == 1 && d >= 1 && d <= 3) {
 }
 ---
 
-<Layout>
+<MainLayout>
     <h1>Welcome!</h1>
     <p>Thank you for visiting my website!</p>
     <p>Feel free to look around~</p>
@@ -55,7 +55,6 @@ if (m == 1 && d >= 1 && d <= 3) {
         />
         <div>
             <p class="text-lg">Hacha Mouse</p>
-            <p>Name: Shuntaro Kasatani</p>
             <p>Birthday: March 19</p>
             <p>Location: Japan</p>
             <p>
@@ -176,4 +175,4 @@ if (m == 1 && d >= 1 && d <= 3) {
             title="National Institute of Technology (KOSEN), Nagano College"
         />
     </Timeline>
-</Layout>
+</MainLayout>

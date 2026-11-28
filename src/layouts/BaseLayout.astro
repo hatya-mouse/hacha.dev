@@ -1,0 +1,24 @@
+---
+import { ClientRouter } from "astro:transitions";
+import Head from "@/components/Head.astro";
+import "@/styles/global.css";
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>{title ?? "hacha.dev"}</title>
+        <Head />
+        <ClientRouter />
+    </head>
+    <slot />
+</html>
+
+<style>
+    html,
+    body {
+        font-family: var(--font-google-sans-code);
+    }
+</style>
